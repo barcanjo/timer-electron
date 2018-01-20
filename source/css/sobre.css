@@ -1,0 +1,9 @@
+.container {
+  text-align: center;
+}
+.container p {
+  margin: 5px 0;
+}
+.container img {
+  width: 50px;
+}
