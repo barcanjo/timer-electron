@@ -1,0 +1,15 @@
+{
+  "name": "timer-electron",
+  "version": "1.0.0",
+  "description": "Aplicação de um relógio contador desenvolvida em Electron.",
+  "main": "main.js",
+  "repository": "https://github.com/barcanjo/timer-electron",
+  "author": "Bruno Arcanjo <bm.arcanjo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^1.7.10"
+  }
+}
