@@ -1,20 +1,18 @@
 const { ipcRenderer, shell } = require('electron');
 const process = require('process');
-const versaoElectron = document.querySelector('#versao-electron');
-const versaoNode = document.querySelector('#versao-node');
-
-window.onload = () => {
-  versaoElectron.textContent = process.versions.electron;
-  versaoNode.textContent = process.version;
-};
 
 const linkFechar = document.querySelector('#link-fechar');
 const linkAutor = document.querySelector('#link-autor');
+const versaoElectron = document.querySelector('#versao-electron');
 
-linkFechar.addEventListener('click', () => {
+window.onload = () => {
+  versaoElectron.textContent = process.versions.electron;
+};
+
+linkFechar.addEventListener('click', function () {
   ipcRenderer.send('fechar-janela-sobre');
 });
 
-linkAutor.addEventListener('click', () => {
-  shell.openExternal('https://github.com/barcanjo');
+linkAutor.addEventListener('click', function () {
+  shell.openExternal('https://www.github.com/barcanjo');
 });

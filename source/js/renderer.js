@@ -1,11 +1,26 @@
 const { ipcRenderer } = require('electron');
+const timer = require('./timer');
 
-const titulo = document.querySelector('#titulo');
+const botaoPlay = document.querySelector('.botao-play');
 const linkSobre = document.querySelector('#link-sobre');
+const tempo = document.querySelector('.tempo');
 
-titulo.innerHTML = 'Hello Electron';
+let imgs = ['./img/play-button.svg', './img/stop-button.svg'];
+let play = false;
+
 linkSobre.addEventListener('click', () => {
   ipcRenderer.send('abrir-janela-sobre');
 });
 
-console.log('JavaScript carregado na aplicacao');
+botaoPlay.addEventListener('click', () => {
+  if (play) {
+    timer.parar();
+    play = false;
+  } else {
+    timer.iniciar(tempo);
+    play = true;
+  }
+
+  imgs = imgs.reverse();
+  botaoPlay.src = imgs[0];
+});
