@@ -7,7 +7,8 @@
   "author": "Bruno Arcanjo <bm.arcanjo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-packager . alura-timer --platform=linux,darwin,win32 --arch=x64 --icon=source/icon/icon"
   },
   "dependencies": {
     "electron": "^1.7.10",
